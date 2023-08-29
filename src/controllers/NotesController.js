@@ -17,11 +17,10 @@ class NotesController{
         url: link
       }
     });
-    console.log(links)
+
     if(links.length > 0){
       await knex("links").insert(linksInsert);
     }
-
     
     const tagsInsert = tags.map(name => {
       return{
